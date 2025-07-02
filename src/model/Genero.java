@@ -17,4 +17,8 @@ public class Genero {
     public void addFilme(Filme filme) {
         listaFilmes.add(filme);
     }
+
+    public ArrayList<Filme> getListaFilmes() {
+        return listaFilmes;
+    }
 }

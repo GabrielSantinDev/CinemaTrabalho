@@ -7,13 +7,15 @@ public class Filme {
     private String titulo;
     private double duracao;
     private Genero genero;
+    private String anoLancamento;
 
     private ArrayList<Ator> listaAtores = new ArrayList<>();
 
-    public Filme(String titulo, double duracao, Genero genero) {
+    public Filme(String titulo, double duracao, String anoLancamento, Genero genero) {
         this.titulo = titulo;
         this.duracao = duracao;
         this.genero = genero;
+        this.anoLancamento = anoLancamento;
 
         genero.addFilme(this);
     }
@@ -38,4 +40,7 @@ public class Filme {
         return listaAtores;
     }
 
+    public String getAnoLancamento() {
+        return anoLancamento;
+    }
 }
