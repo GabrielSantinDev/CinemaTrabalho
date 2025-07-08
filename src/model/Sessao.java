@@ -1,13 +1,9 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Sessao {
-
     private Sala sala;
     private Filme filme;
     private String horario;
-
     private int ingressosVendidos = 0;
     private final int capacidadeMax;
     private boolean encerrado = false;
@@ -16,33 +12,40 @@ public class Sessao {
         this.sala = sala;
         this.filme = filme;
         this.horario = horario;
-
         sala.addSessao(this);
         this.capacidadeMax = sala.getCapacidadeMax();
     }
 
-    public void venderIngresso() {
-        this.ingressosVendidos++;
+    public int getIngressosDisponiveis() {
+        return this.capacidadeMax - this.ingressosVendidos;
+    }
+
+    public void venderIngressos() {
+        ++this.ingressosVendidos;
     }
 
     public Sala getSala() {
-        return sala;
+        return this.sala;
     }
 
-    public Filme getFilme() {
-        return filme;
+    public String getFilme() {
+        return this.filme.getTitulo();
     }
 
     public String getHorario() {
-        return horario;
+        return this.horario;
     }
 
     public int getIngressosVendidos() {
-        return ingressosVendidos;
+        return this.ingressosVendidos;
+    }
+
+    public void devolverIngressos() {
+        --this.ingressosVendidos;
     }
 
     public boolean isEncerrado() {
-        return encerrado;
+        return this.encerrado;
     }
 
     public void setEncerrado(boolean encerrado) {
@@ -50,6 +53,6 @@ public class Sessao {
     }
 
     public int getCapacidadeMax() {
-        return capacidadeMax;
+        return this.capacidadeMax;
     }
 }

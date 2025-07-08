@@ -43,4 +43,20 @@ public class Filme {
     public String getAnoLancamento() {
         return anoLancamento;
     }
+
+    public void imprimirElenco() {
+        System.out.println("\nElenco de " + getTitulo() + ": ");
+
+        for (Ator ator : listaAtores) {
+            ArrayList<Papel> papeis = ator.getListaPapeis();
+
+            for (Papel papel : papeis) {
+                if (papel.getFilme().equals(this)) {
+                    System.out.println(ator.getNome() + " no papel de: " + papel.getNomeDoPapel());
+                }
+            }
+        }
+    }
 }
+
+

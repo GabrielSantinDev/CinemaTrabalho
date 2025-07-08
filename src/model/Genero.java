@@ -21,4 +21,12 @@ public class Genero {
     public ArrayList<Filme> getListaFilmes() {
         return listaFilmes;
     }
+
+    public void listarFilmesGenero() {
+        System.out.println("\nLista de Filmes do genero " + generoNome + ":");
+
+        for (Filme filme : listaFilmes) {
+            System.out.println(" - " + filme.getTitulo() + " Duração: " + filme.getDuracao() + "minutos " + "Ano: " + filme.getAnoLancamento());
+        }
+    }
 }
